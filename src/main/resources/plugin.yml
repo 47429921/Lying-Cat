@@ -1,0 +1,6 @@
+name: LyingCat
+version: '${project.version}'
+main: me.cutecat.lyingcat.LyingCat
+api-version: 1.18
+authors: [ 47429921 ]
+description: Cats on top
