@@ -19,22 +19,27 @@ public class stoppedpluginn {
                 }
             });
         });
+        plugin.getLogger().info("Scan Completed");
     }
 
     public static void startownera() {
         Bukkit.getServer().getWorlds().forEach(worldaa -> {
             worldaa.getEntities().forEach(Ineedcat -> {
                 if (Ineedcat instanceof Cat) {
-                    if (Objects.equals(plugin.getConfig().getString("Require-perm"), String.valueOf(true))) {
-                        if (!Bukkit.getPlayer(((Cat) Ineedcat).getOwnerUniqueId()).hasPermission("LyingCat.lying")) {
-                            return;
+                    if (((Cat) Ineedcat).isTamed()) {
+                        if (Objects.equals(plugin.getConfig().getString("Require-perm"), String.valueOf(true))) {
+                            if (!Bukkit.getPlayer(((Cat) Ineedcat).getOwnerUniqueId()).hasPermission("LyingCat.lying")) {
+                                return;
+                            }
                         }
-                    }
-
+                if (((Cat) Ineedcat).isSitting()) {
                     ((Cat) Ineedcat).setLyingDown(true);
+                }
 
+                    }
                 }
             });
         });
+        plugin.getLogger().info("Startup Scan Completed");
     }
 }
