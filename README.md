@@ -3,5 +3,5 @@ I like Cat
 
 ---
 
-Cat now lie down instead of sit down.
+Cat now lies down instead of sitting down.
 
