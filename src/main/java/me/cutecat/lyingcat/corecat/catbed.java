@@ -14,11 +14,20 @@ import org.bukkit.event.player.PlayerInteractEntityEvent;
 import org.bukkit.event.player.PlayerMoveEvent;
 import org.bukkit.event.world.WorldLoadEvent;
 import org.bukkit.plugin.Plugin;
+import org.bukkit.event.world.ChunkUnloadEvent;
 
 import java.util.Objects;
 
 
 public class catbed implements Listener {
+    
+    @EventHandler
+    public void chunkunloadser(ChunkUnloadEvent e){
+        e.getChunk().getEntities().forEach
+
+        
+        
+    }
 
 
 
