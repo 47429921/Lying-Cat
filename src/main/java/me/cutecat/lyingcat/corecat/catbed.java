@@ -28,6 +28,24 @@ public class catbed implements Listener {
         
         
     }
+    
+    @EventHandler
+    public void unloadchunkevent(ChunkUnloadEvent e){
+        Plugin plugin = lyingCat.getPlugin(lyingCat.class);
+        if (e.getRightedClicked() instanceof Cat cat){
+            if  (cat.isTamed){
+                Switch(cat.isSitting){
+                    case true:
+                    //TODO this
+                }
+                
+            cat.setLyingDown(false);
+            
+            }
+        }
+        
+        
+    }
 
 
 
