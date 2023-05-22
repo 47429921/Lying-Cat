@@ -15,6 +15,7 @@ import org.bukkit.event.player.PlayerMoveEvent;
 import org.bukkit.event.world.WorldLoadEvent;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.event.world.ChunkUnloadEvent;
+import org.bukkit.event.world.ChunkLoadEvent;
 
 import java.util.Objects;
 
@@ -22,8 +23,16 @@ import java.util.Objects;
 public class catbed implements Listener {
     
     @EventHandler
-    public void chunkunloadser(ChunkUnloadEvent e){
-        e.getChunk().getEntities().forEach
+    public void chunkunloadser(ChunkLoadEvent e){
+        e.getChunk().getEntities().ForEach(entitys => {
+                if(entitys instanceof Cat){
+                    if(entitys.isTamed && entitys.isSitting){
+                        entitys.setLyingDown(true);
+                    }
+                }
+        })
+
+        //TODO ForEach 
 
         
         
@@ -32,17 +41,17 @@ public class catbed implements Listener {
     @EventHandler
     public void unloadchunkevent(ChunkUnloadEvent e){
         Plugin plugin = lyingCat.getPlugin(lyingCat.class);
-        if (e.getRightedClicked() instanceof Cat cat){
+        //if(e.getChunk.getEntities().f)
+        /*if (e.getRightedClicked() instanceof Cat cat){
             if  (cat.isTamed){
-                Switch(cat.isSitting){
-                    case true:
-                    //TODO this
+                if (cat.isSitting){
+                    cat.setLyingDown(true);
                 }
                 
             cat.setLyingDown(false);
             
             }
-        }
+        }*/
         
         
     }
